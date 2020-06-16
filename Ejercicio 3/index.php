@@ -41,7 +41,7 @@ if(isset($_GET['alumnos'])) {
                     echo "</div>";
                 }            
             ?>          
-            <input type="submit" name="Enviar">
+            <input type="submit" value="Enviar">
         </form>
     <?php else : ?>
         <h1>Número de alumnos a evaluar</h1>
