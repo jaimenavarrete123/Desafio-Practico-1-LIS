@@ -84,10 +84,10 @@ else {
     </table>
 
     <div class="wrapper">
-        <p>Porcentaje de alumnos aprobados: <?php echo $porcentajeAprobados?>%</p>
-        <p>Porcentaje de alumnos reprobados: <?php echo $porcentajeReprobados?>%</p>
-        <p>El alumno con mayor promedio: <?php echo strtoupper($nombre[$posMax]) . ' con promedio de ' . $promedio[$posMax];?></p>
-        <p>El alumno con menor promedio: <?php echo strtoupper($nombre[$posMin]) . ' con promedio de ' . $promedio[$posMin];?></p>
+        <p>Porcentaje de alumnos aprobados: <?php echo $porcentajeAprobados; ?>%</p>
+        <p>Porcentaje de alumnos reprobados: <?php echo $porcentajeReprobados; ?>%</p>
+        <p>El alumno con mayor promedio: <?php echo strtoupper($nombre[$posMax]) . ' con promedio de ' . $promedio[$posMax]; ?></p>
+        <p>El alumno con menor promedio: <?php echo strtoupper($nombre[$posMin]) . ' con promedio de ' . $promedio[$posMin]; ?></p>
     </div>
 </body>
 </html>
