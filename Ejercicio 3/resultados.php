@@ -57,7 +57,7 @@ else {
 </head>
 <body>
     <h1>Resultados del grupo de alumnos</h1>
-    <table>
+    <table class="tablaResultados">
         <tr>
             <th>Carnet:</th>
             <th>Nombre:</th>
@@ -65,6 +65,7 @@ else {
             <th>Nota2:</th>
             <th>Nota3:</th>
             <th>Promedio:</th>
+            <th>Estado:</th>
         </tr>
 
         <?php    
@@ -76,7 +77,12 @@ else {
                 echo "<td>$nota2[$i]</td>";
                 echo "<td>$nota3[$i]</td>";
                 echo "<td>$promedio[$i]</td>";
-                echo "<td>$estado[$i]</td>";
+                if($estado[$i] == 'Aprobado'){
+                    echo "<td class='datos'>$estado[$i]</td>";
+                }
+                else {
+                    echo "<td class='datos reprobado'>$estado[$i]</td>";
+                }
                 echo "</tr>";
             }       
         ?>
@@ -84,10 +90,10 @@ else {
     </table>
 
     <div class="wrapper">
-        <p>Porcentaje de alumnos aprobados: <?php echo $porcentajeAprobados; ?>%</p>
-        <p>Porcentaje de alumnos reprobados: <?php echo $porcentajeReprobados; ?>%</p>
-        <p>El alumno con mayor promedio: <?php echo strtoupper($nombre[$posMax]) . ' con promedio de ' . $promedio[$posMax]; ?></p>
-        <p>El alumno con menor promedio: <?php echo strtoupper($nombre[$posMin]) . ' con promedio de ' . $promedio[$posMin]; ?></p>
+        <p>Porcentaje de alumnos aprobados: <span class="datos"><?php echo $porcentajeAprobados; ?> %</span></p>
+        <p>Porcentaje de alumnos reprobados: <span class="datos"><?php echo $porcentajeReprobados; ?> %</span></p>
+        <p>El alumno con mayor promedio: <span class="datos"><?php echo strtoupper($nombre[$posMax]) . ' con promedio de ' . $promedio[$posMax]; ?></span></p>
+        <p>El alumno con menor promedio: <span class="datos"><?php echo strtoupper($nombre[$posMin]) . ' con promedio de ' . $promedio[$posMin]; ?></span></p>
     </div>
 </body>
 </html>

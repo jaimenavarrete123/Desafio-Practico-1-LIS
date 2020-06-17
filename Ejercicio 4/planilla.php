@@ -58,8 +58,8 @@ else {
                 echo "<td>$nombre[$i]</td>";
                 echo "<td>$cargo[$i]</td>";
                 echo "<td>$horas[$i]</td>";
-                echo "<td>$salario[$i]</td>";
-                echo "<td>$salarioNeto[$i]</td>";
+                echo "<td>$ " . "$salario[$i]</td>";
+                echo "<td>$ " . "$salarioNeto[$i]</td>";
                 echo '</tr>';
             }
         
@@ -67,8 +67,8 @@ else {
     </table>
     <div class="wrapper">
         <p>Total de empleados: <span class="datos"><?php echo $empleados; ?></span></p>
-        <p>Total a pagar en salarios (sin descuentos): <span class="datos">$<?php echo $total; ?></span></p>
-        <p>Total a pagar en salarios netos (con descuentos): <span class="datos">$<?php echo $totalNeto; ?></span></p>
+        <p>Total a pagar en salarios (sin descuentos): <span class="datos">$ <?php echo $total; ?></span></p>
+        <p>Total a pagar en salarios netos (con descuentos): <span class="datos">$ <?php echo $totalNeto; ?></span></p>
     </div>
 </body>
 </html>
