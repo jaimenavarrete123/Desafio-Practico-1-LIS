@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-
     scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formstyle.css">
     <title>Ejercicio 2</title>
   </head>
   <body>
-    <div class="main">
+    <h1>EJERCICIO 2</h1>
+    <div id="formarea">
       <?php
         if(!isset($_POST['Enviar'])):
        ?>

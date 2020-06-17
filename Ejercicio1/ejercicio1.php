@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-
     scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formstyle.css">
     <title>Ejercicio 1</title>
   </head>
   <body>
-    <div class="main">
+    <h1>Ejercicio 1</h1>
+    <div id="formarea">
       <?php
         if(!isset($_POST['Enviar'])): //Si la variable no está definida, entonces no hará nada
        ?>
@@ -25,7 +26,7 @@
          <span>
            <label>Método de pago:</label>
          </span> <!--El name servirá pra hacer referencia a la opción dentro de una variable-->
-         <select name="tipo_pago"> <!--Los values servirán para hacer el switch-->
+         <select name="tipo_pago" id="input"> <!--Los values servirán para hacer el switch-->
            <option value="0">Efectivo</option>
            <option value="1">Cheque</option>
            <option value="2">Tarjeta de Crédito</option>
@@ -50,10 +51,10 @@
           //Se estima el total a pagar, ya con el descuento aplicado a la compra
           $total_ConDescuento = round(($total_SinDescuento - $descuento_total)*100)/100;
           //Se imprime en pantalla el resultado
-          echo "<span style=\"color:black;font:bold 15pt 'Lucida Sans';\">Precio de productos sin descuento: €$total_SinDescuento euros </span><br>";
-          echo "<span style=\"color:black;font:bold 15pt 'Lucida Sans';\">Descuento aplicado: €$descuento_total euros </span><br>";
-          echo "<span style=\"color:black;font:bold 15pt 'Lucida Sans';\">TOTAL A PAGAR: €$total_ConDescuento euros </span><br>";
-          echo "<span style=\"color:Green;font:bold 15pt 'Lucida Sans';\"><a
+          echo "<span style=\"color:black;font:bold 12pt 'Lucida Sans';\">Precio de productos sin descuento: €$total_SinDescuento euros </span><br><br>";
+          echo "<span style=\"color:black;font:bold 12pt 'Lucida Sans';\">Descuento aplicado: €$descuento_total euros </span><br><br>";
+          echo "<span style=\"color:black;font:bold 12pt 'Lucida Sans';\">TOTAL A PAGAR: €$total_ConDescuento euros </span><br><br>";
+          echo "<span style=\"color:Green;font:bold 12pt 'Lucida Sans';\"><a
           href=\"{$_SERVER['PHP_SELF']}\">Calcular nuevo total</a>";
       endif;
         ?>
