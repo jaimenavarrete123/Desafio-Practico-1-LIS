@@ -28,25 +28,25 @@ if(isset($_GET['alumnos'])) {
                     <th>Nota 3</th>
                 </tr>
             </table>
-            <?php            
+            <?php
                 for($i = 1; $i<=$alumnos; $i++){
                     echo "<div class='datos_alumno'>";
                     echo "<span>$i.- </span>";
                     echo "<input type='hidden' name='alumnos' value='$alumnos'>";
                     echo "<input type='text' name='" . $i . "carnet' placeholder='Carnet:'>";
                     echo "<input type='text' name='" . $i . "nombre' placeholder='Nombre completo:'>";
-                    echo "<input type='text' name='" . $i . "nota1' placeholder='Nota 1:'>";
-                    echo "<input type='text' name='" . $i . "nota2' placeholder='Nota 2:'>";
-                    echo "<input type='text' name='" . $i . "nota3' placeholder='Nota 3:'>";
+                    echo "<input type='number' name='" . $i . "nota1' placeholder='Nota 1:' min='0' max='10' step='0.1'>";
+                    echo "<input type='number' name='" . $i . "nota2' placeholder='Nota 2:' min='0' max='10' step='0.1'>";
+                    echo "<input type='number' name='" . $i . "nota3' placeholder='Nota 3:' min='0' max='10' step='0.1'>";
                     echo "</div>";
-                }            
-            ?>          
+                }
+            ?>
             <input type="submit" value="Enviar">
         </form>
     <?php else : ?>
         <h1>Número de alumnos a evaluar</h1>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
-            <input type="number" name="alumnos" placeholder="Número de alumnos:">
+            <input type="number" name="alumnos" placeholder="Número de alumnos:" min="0">
             <input type="submit" value="Enviar">
         </form>
     <?php endif ?>

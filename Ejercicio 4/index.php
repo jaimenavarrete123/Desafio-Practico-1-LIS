@@ -26,23 +26,23 @@ if(isset($_GET['empleados'])) {
                     <th>Horas trabajadas</th>
                 </tr>
             </table>
-            <?php            
+            <?php
                 for($i = 1; $i<=$empleados; $i++){
                     echo "<div class='datos_empleados'>";
                     echo "<span>$i.- </span>";
                     echo "<input type='hidden' name='empleados' value='$empleados'>";
                     echo "<input type='text' name='" . $i . "nombre' placeholder='Nombre completo:'>";
                     echo "<input type='text' name='" . $i . "cargo' placeholder='Cargo en la empresa:'>";
-                    echo "<input type='text' name='" . $i . "horas' placeholder='Horas trabajadas'>";
+                    echo "<input type='number' name='" . $i . "horas' placeholder='Horas trabajadas' min='0' step='0.1'>";
                     echo "</div>";
-                }            
-            ?>          
+                }
+            ?>
             <input type="submit" value="Enviar">
         </form>
     <?php else : ?>
         <h1>Numero de empleados</h1>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
-            <input type="number" name="empleados" placeholder="Número de empleados:">
+            <input type="number" name="empleados" placeholder="Número de empleados:" min="0">
             <input type="submit" value="Enviar">
         </form>
     <?php endif ?>
