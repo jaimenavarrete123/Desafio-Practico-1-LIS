@@ -41,12 +41,12 @@ else {
 </head>
 <body>
     <h1>Planilla de pagos para empleados</h1>
-    <table>
+    <table class="tablaResultados">
         <tr>
-            <th>Numero</th>
-            <th>Nombre</th>
-            <th>Cargo en la empresa</th>
-            <th>Horas trabajadas</th>
+            <th class="id">Numero</th>
+            <th class="nombre">Nombre</th>
+            <th class="cargo">Cargo en la empresa</th>
+            <th class="horas">Horas trabajadas</th>
             <th>Salario sin descuento</th>
             <th>Salario con descuento</th>
         </tr>
@@ -66,9 +66,9 @@ else {
         ?>
     </table>
     <div class="wrapper">
-        <p>Total de empleados: <?php echo $empleados; ?></p>
-        <p>Total a pagar en salarios (sin descuentos): $<?php echo $total; ?></p>
-        <p>Total a pagar en salarios netos (con descuentos): $<?php echo $totalNeto; ?></p>
+        <p>Total de empleados: <span class="datos"><?php echo $empleados; ?></span></p>
+        <p>Total a pagar en salarios (sin descuentos): <span class="datos">$<?php echo $total; ?></span></p>
+        <p>Total a pagar en salarios netos (con descuentos): <span class="datos">$<?php echo $totalNeto; ?></span></p>
     </div>
 </body>
 </html>

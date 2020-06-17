@@ -18,22 +18,23 @@ if(isset($_GET['empleados'])) {
 <body>
     <?php if(isset($_GET['empleados'])) : ?>
         <h1>Ingresar datos de empleados</h1>
-        <form action="planilla.php" method="post">
+        <form class="informacionEmpleados" action="planilla.php" method="post">
             <table>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Cargo en la empresa</th>
-                    <th>Horas trabajadas</th>
+                    <th class="id">Id</th>
+                    <th class="nombre">Nombre</th>
+                    <th class="cargo">Cargo en la empresa</th>
+                    <th class="horas">Horas trabajadas</th>
                 </tr>
             </table>
             <?php
                 for($i = 1; $i<=$empleados; $i++){
-                    echo "<div class='datos_empleados'>";
+                    echo "<div class='datosEmpleados'>";
                     echo "<span>$i.- </span>";
-                    echo "<input type='hidden' name='empleados' value='$empleados'>";
-                    echo "<input type='text' name='" . $i . "nombre' placeholder='Nombre completo:'>";
-                    echo "<input type='text' name='" . $i . "cargo' placeholder='Cargo en la empresa:'>";
-                    echo "<input type='number' name='" . $i . "horas' placeholder='Horas trabajadas' min='0' step='0.1'>";
+                    echo "<input type='hidden' class='id' name='empleados' value='$empleados'>";
+                    echo "<input type='text' class='nombre' name='" . $i . "nombre' placeholder='Nombre completo:'>";
+                    echo "<input type='text' class='cargo' name='" . $i . "cargo' placeholder='Cargo:'>";
+                    echo "<input type='number' class='horas' name='" . $i . "horas' placeholder='Horas:' min='0' step='0.1'>";
                     echo "</div>";
                 }
             ?>
@@ -41,7 +42,7 @@ if(isset($_GET['empleados'])) {
         </form>
     <?php else : ?>
         <h1>Numero de empleados</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
+        <form class="obtenerEmpleados" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
             <input type="number" name="empleados" placeholder="Número de empleados:" min="0">
             <input type="submit" value="Enviar">
         </form>
