@@ -1,9 +1,160 @@
-/* * {
+* {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
+}
 
 body {
+    background: #F2F2F2;
     font-family: 'Montserrat', Arial, sans-serif, helvetica;
+}
+
+h1 {
+    color: #24ACF2;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form,
+.tablaResultados,
+.wrapper {
+    background: #FFF;
+    box-shadow: 1px 1px 2px #000;
+    margin: 0 auto;
+}
+
+form input {
+    font-family: 'Montserrat', Arial, sans-serif, helvetica;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form input[type="submit"] {
+    background: #24ACF2;
+    border-radius: 100px;
+    color: #FFF;
+    cursor: pointer;
+
+    transition: all 0.2s ease-out;
+}
+
+form input[type="submit"]:hover {
+    background: #1b83b8;
+}
+
+.obtenerAlumnos {
+    padding: 10px;
+
+    max-width: 350px;
+    width: 75%;
+}
+
+.obtenerAlumnos input {
+    border: 2px solid #212121;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.obtenerAlumnos input[type="number"] {
+    border-radius: 100px;
+}
+
+.id {
+    width: 5%;
+}
+.carnet {
+    width: 15%;
+}
+.nombre {
+    width: 40%;
+}
+.nota1,
+.nota2,
+.nota3 {
+    width: 11%;
+}
+
+.informacionAlumnos {
+    padding: 20px;
+
+    max-width: 1000px;
+    width: 100%;
+}
+
+.informacionAlumnos table {
+    border-bottom: 5px solid #24ACF2;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.informacionAlumnos span {
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 0;
+    width: 5%;
+}
+
+.informacionAlumnos input {
+    border: 1px solid #212121;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.informacionAlumnos input[type="submit"] {
+    display: block;
+    margin: 20px auto 10px auto;
+    padding: 15px 120px;
+}
+
+.tablaResultados {
+    border-collapse: collapse;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+
+    max-width: 1300px;
+    width: 100%;
+}
+
+.tablaResultados tr:nth-child(2n) {
+    background: #E6E6E6;
+}
+
+.tablaResultados th {
+    border-bottom: 5px solid #24ACF2;
+}
+
+.tablaResultados th,
+.tablaResultados td {
+    padding: 15px 20px;
+}
+
+.tablaResultados .datos {
+    font-weight: bold;
+}
+
+.tablaResultados .reprobado {
+    color: #D70A0A;
+}
+
+.wrapper {
+    padding: 20px;
+
+    max-width: 1300px;
+    width: 100%;
+}
+
+.wrapper p {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.wrapper .datos {
+    margin-left: 10px;
+    font-weight: bold;
 }

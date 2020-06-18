@@ -18,11 +18,11 @@
          <span>
            <label>Precio de producto:</label>&nbsp;&nbsp;
          </span> <!--Input de tipo número con incremento de 0.1 para definir el precio del producto-->
-         <input type="number" name="precio" value="" min="0" step="0.01" /><br><br>
+         <input type="number" name="precio" value="" min="0" step="0.01" required/><br><br>
          <span> <!--Input de tipo número con incremento de 1 para definir la cantidad a llevar del producto-->
            <label>Cantidad a llevar:</label>&nbsp;&nbsp;
          </span>
-         <input type="number" name="cantidad" value="" min="0" step="1" /><br><br>
+         <input type="number" name="cantidad" value="" min="0" step="1" required/><br><br>
          <span>
            <label>Método de pago:</label>
          </span> <!--El name servirá pra hacer referencia a la opción dentro de una variable-->
@@ -39,6 +39,11 @@
           $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
           $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
           $tipo_pago = isset($_POST['tipo_pago']) ? $_POST['tipo_pago'] : 0;
+          if(($precio<=0 || $cantidad<=0)||($precio<=0 && $cantidad<=0)){ //Validación para no dejar cantidad y/o precio con un valor de 0
+            echo "<span style=\"color:black;font:bold 15pt 'Lucida Sans';\">Ingrese una cantidad válida </span><br>";
+            echo "<span style=\"color:Green;font:bold 15pt 'Lucida Sans';\"><a
+            href=\"{$_SERVER['PHP_SELF']}\">Calcular nuevo total</a>";
+          }else{
           //La función round permitirá redondear a 2 cifras
           $total_SinDescuento = round(($precio * $cantidad)*100)/100; //Se estima el monto a pagar sin descuento
           switch($tipo_pago){ //Cantidad a descontar según tipo de pago
@@ -56,6 +61,7 @@
           echo "<span style=\"color:black;font:bold 12pt 'Lucida Sans';\">TOTAL A PAGAR: €$total_ConDescuento euros </span><br><br>";
           echo "<span style=\"color:Green;font:bold 12pt 'Lucida Sans';\"><a
           href=\"{$_SERVER['PHP_SELF']}\">Calcular nuevo total</a>";
+        }
       endif;
         ?>
     </div>
