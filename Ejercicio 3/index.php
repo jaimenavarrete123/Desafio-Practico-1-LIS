@@ -47,7 +47,7 @@ if(isset($_GET['alumnos'])) {
     <?php else : ?>
         <h1>Número de alumnos a evaluar</h1>
         <form class="obtenerAlumnos" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="get">
-            <input type="number" name="alumnos" placeholder="Número de alumnos:" min="0" required>
+            <input type="number" name="alumnos" placeholder="Número de alumnos:" min="1" required>
             <input type="submit" value="Enviar">
         </form>
     <?php endif ?>
