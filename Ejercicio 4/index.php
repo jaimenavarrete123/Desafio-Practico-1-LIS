@@ -16,7 +16,7 @@ if(isset($_GET['empleados'])) {
     <title>Empleados</title>
 </head>
 <body>
-    <?php if(isset($_GET['empleados'])) : ?>
+    <?php if(isset($_GET['empleados']) && $_GET['empleados'] > 0) : ?>
         <h1>Ingresar datos de empleados</h1>
         <form class="informacionEmpleados" action="planilla.php" method="post">
             <table>
@@ -32,9 +32,9 @@ if(isset($_GET['empleados'])) {
                     echo "<div class='datosEmpleados'>";
                     echo "<span>$i.- </span>";
                     echo "<input type='hidden' class='id' name='empleados' value='$empleados'>";
-                    echo "<input type='text' class='nombre' name='" . $i . "nombre' placeholder='Nombre completo:'>";
-                    echo "<input type='text' class='cargo' name='" . $i . "cargo' placeholder='Cargo:'>";
-                    echo "<input type='number' class='horas' name='" . $i . "horas' placeholder='Horas:' min='0' step='0.1'>";
+                    echo "<input type='text' class='nombre' name='" . $i . "nombre' placeholder='Nombre completo:' required>";
+                    echo "<input type='text' class='cargo' name='" . $i . "cargo' placeholder='Cargo:' required>";
+                    echo "<input type='number' class='horas' name='" . $i . "horas' placeholder='Horas:' min='0' step='0.1' required>";
                     echo "</div>";
                 }
             ?>

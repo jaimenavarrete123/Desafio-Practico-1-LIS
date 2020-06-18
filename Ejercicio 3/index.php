@@ -16,7 +16,7 @@ if(isset($_GET['alumnos'])) {
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <?php if(isset($_GET['alumnos'])) : ?>
+    <?php if(isset($_GET['alumnos']) && $_GET['empleados'] > 0) : ?>
         <h1>Evaluar alumnos</h1>
         <form class="informacionAlumnos" action="resultados.php" method="post">
             <table>
